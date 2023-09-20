@@ -10,16 +10,11 @@ pub const TIME_BETWEEN_STEPS: Time = Time::milliseconds(30); // time between eac
 pub const BAR_WIDTH: f32 = WINDOW_WIDTH as f32 / NUM_BARS as f32;
 
 fn main() {
-    let settings = ContextSettings {
-        antialiasing_level: 8,
-        ..Default::default()
-    };
-
     let mut window = RenderWindow::new(
         (WINDOW_WIDTH, WINDOW_HEIGHT),
         "Sorting algorithm visualizer",
         Style::CLOSE,
-        &settings,
+        &Default::default(),
     );
 
     window.set_vertical_sync_enabled(true);
