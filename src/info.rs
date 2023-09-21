@@ -25,6 +25,20 @@ impl Data {
         }
     }
 
+    pub fn change_order(&mut self, ascending: bool) {
+        if self.ascending == ascending { return; }
+        self.ascending = ascending;
+        self.reset();
+    }
+
+    pub fn len(&self) -> usize {
+        self.list.len()
+    }
+
+    pub fn resize(&mut self, size: usize) {
+        self.list.resize(size, Default::default());
+    }
+
     pub fn generate_random(&mut self, min: f32, max: f32) {
         self.list
             .iter_mut()
@@ -33,6 +47,11 @@ impl Data {
 
     pub fn get(&self, idx: usize) -> Option<f32> {
         self.list.get(idx).copied()
+    }
+
+    pub fn reset(&mut self) {
+        self.i = 0;
+        self.swapped = false;
     }
 
     pub fn sort_step(&mut self) {
