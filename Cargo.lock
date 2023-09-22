@@ -88,6 +88,7 @@ dependencies = [
 [[package]]
 name = "egui-sfml"
 version = "0.4.0"
+source = "git+https://github.com/Pranjal-Patel/egui-sfml#56367482fb7ff1f4b534f1af8245190fbd587a0b"
 dependencies = [
  "egui",
  "glu-sys",
